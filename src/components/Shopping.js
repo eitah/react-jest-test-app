@@ -39,7 +39,7 @@ class Shopping extends Component {
         <option>Produce</option>
       </select>
       <button onClick={this.add}>Add</button>
-      <div>{this.state.cart.map( i => {return (<div> i </div>)}</div>
+      <div>{this.state.cart.map( i => {return (<div key={i.hash}>{i.name} in category {i.category}</div>)})}</div>
 
 
 

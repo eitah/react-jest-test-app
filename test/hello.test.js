@@ -13,7 +13,6 @@ it('renders without crashing', () => {
 
 it('should render Hello World in an H1', () => {
   const wrapper = shallow(<Hello />);
-  console.log(wrapper.debug());
   expect(wrapper.find('h1').text()).to.equal('Hello World');
 });
 

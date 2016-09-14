@@ -22,7 +22,11 @@ it('should get 1 item added to cart when button is pressed', () => {
   wrapper.ref('name').get(0).value = 'Steak'; //type steak
   wrapper.ref('category').get(0).value = 'Meat'; //select value from dropdown
   wrapper.find('button').simulate('click');
-  
+  console.log(wrapper.debug());
 
   expect(wrapper.state('cart')).to.have.length(1);
+  expect(wrapper.state('cart')[0].picked).to.be.false;
+  expect(wrapper.state('cart')[0].hash).to.equal('b696d1c6b7b3e1ad8900357fb7b3f901'); //SteakMeat300
+  sinon.restore();
+  clock.restore();
 });
